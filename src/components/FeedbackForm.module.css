@@ -1,0 +1,46 @@
+.container-feedback-form {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  width: 300px;
+  background-color: #8b806c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.button-opinion {
+  font-size: 18px;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(3, 3, 3, 0.4);
+}
+
+.button-opinion:hover {
+  background-color: #ddd;
+}
+
+h2 {
+  color: #333;
+  font-size: 22px;
+}
+
+
+.statistics-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+p {
+  margin: 3px 0;
+  color: #fff;
+}
