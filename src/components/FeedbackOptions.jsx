@@ -1,35 +1,34 @@
-import { Component } from 'react';
+import React from 'react';
 import css from './FeedbackForm.module.css';
 import PropTypes from 'prop-types';
 
-class FeedbackOptions extends Component {
-  render() {
-    const { options, onLeaveFeedback } = this.props;
-    //Object.keys() - metoda, która zwraa tablicę kluczy np:
-    // const object1 = {
-    //   a: 'somestring',
-    //   b: 42,
-    //   c: false,};
-    // console.log(Object.keys(object1));
-    // Expected output: Array ["a", "b", "c"]
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  //Object.keys() - metoda, która zwraa tablicę kluczy np:
+  // const object1 = {
+  //   a: 'somestring',
+  //   b: 42,
+  //   c: false,};
+  // console.log(Object.keys(object1));
+  // Expected output: Array ["a", "b", "c"]
 
-    //przy uzyciu 'map' iteruje przez klucze i zwracam dla każdego kluzza przycisk, gdzie klucz jest uzywany jako nazzwa opcji
-    //'onClick' przekazuje nazwę opcji do funkcji 'onLeaveFeedback'
-    const optionButtons = Object.keys(options).map(option => (
-      <button
-        key={option}
-        className={css['button-opinion']}
-        onClick={() => onLeaveFeedback(option)}
-      >{option}</button>
-    ));
-    return <div className={css['button-wrapper']}>{optionButtons}</div>;
-  }
-}
+  //przy uzyciu 'map' iteruje przez klucze i zwracam dla każdego kluzza przycisk, gdzie klucz jest uzywany jako nazzwa opcji
+  //'onClick' przekazuje nazwę opcji do funkcji 'onLeaveFeedback'
+  const optionButtons = Object.keys(options).map(option => (
+    <button
+      key={option}
+      className={css['button-opinion']}
+      onClick={() => onLeaveFeedback(option)}
+    >
+      {option}
+    </button>
+  ));
+  return <div className={css['button-wrapper']}>{optionButtons}</div>;
+};
 
-FeedbackOptions.propTypes ={
+FeedbackOptions.propTypes = {
   options: PropTypes.object.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
-}
+};
 
 export default FeedbackOptions;
 
@@ -56,5 +55,3 @@ export default FeedbackOptions;
 //     </button>
 //   </div>
 // );
-
-
